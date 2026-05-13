@@ -19,5 +19,6 @@ Olá! Sou Ryan, desenvolvedor web focado em HTML, CSS, PHP e JavaScript.
 - Vite
 
 ## 📫 Contato
-- GitHub: [rkryanx7209](https://github.com/rkryanx7209)
-- Email: rkryanx7209@gmail.com
+- 🌐 Portfólio: [meu-portfolio-ryan.netlify.app](https://meu-portfolio-ryan.netlify.app/)
+- 🐙 GitHub: [rkryanx7209](https://github.com/rkryanx7209)
+- 📧 Email: rkryanx7209@gmail.com
