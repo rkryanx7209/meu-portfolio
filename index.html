@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,9 @@
 
     <header>
         <nav>
-           <div class="logo">
+            <div class="logo">
                 <img src="img/icon.png" alt="Ryan.dev">
                 Ryan<span>.dev</span>
-           </div>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
             </div>
             <ul id="nav-menu">
                 <li><a href="#inicio">Início</a></li>
@@ -28,12 +25,20 @@
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Olá, eu sou o <span>Ryan</span></h1>
+            <h1>Olá, eu sou o <span id="typewriter"></span></h1>
             <p>Estudante e Desenvolvedor iniciante focado em HTML, CSS, PHP e JavaScript.</p>
             <div class="btns">
                 <a href="https://github.com/rkryanx7209" target="_blank" rel="noopener noreferrer" class="btn-principal">
@@ -42,6 +47,28 @@
                 <a href="#contato" class="btn-secundario">
                     <i class="fas fa-paper-plane"></i> Fale Comigo
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contador de Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-label"><i class="fas fa-folder-open"></i> Projetos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="8">0</span>
+                <span class="stat-label"><i class="fas fa-code"></i> Tecnologias</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="2">0</span>
+                <span class="stat-label"><i class="fas fa-calendar-alt"></i> Anos estudando</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span>
+                <span class="stat-label"><i class="fas fa-fire"></i> % Dedicação</span>
             </div>
         </div>
     </section>
@@ -67,58 +94,42 @@
             <div class="skill-card">
                 <i class="fab fa-html5"></i>
                 <h3>HTML5</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 85%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-css3-alt"></i>
                 <h3>CSS3</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 75%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-php"></i>
                 <h3>PHP</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 60%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-git-alt"></i>
                 <h3>Git/GitHub</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 70%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fas fa-brain"></i>
                 <h3>Lógica</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 80%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-js"></i>
                 <h3>JavaScript</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 70%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-node-js"></i>
                 <h3>Node.js</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 55%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-android"></i>
                 <h3>Android</h3>
-                <div class="skill-level">
-                    <div class="level-bar"></div>
-                </div>
+                <div class="skill-level"><div class="level-bar" style="width: 50%"></div></div>
             </div>
         </div>
     </section>
@@ -127,114 +138,68 @@
         <h2><i class="fas fa-folder-open"></i> Meus Projetos</h2>
         <div class="projects-grid">
 
-            <!-- Projeto 1 - Nutri-GT -->
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-apple-whole"></i>
-                </div>
+                <div class="project-icon"><i class="fas fa-apple-whole"></i></div>
                 <h3>Nutri-GT</h3>
                 <p>Sistema de agendamento e avaliação nutricional, com versão web e mobile sincronizados.</p>
                 <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>PHP</span>
-                    <span>Android</span>
+                    <span>HTML5</span><span>CSS3</span><span>PHP</span><span>Android</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://nutri.gt.tc/" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Ver Site
-                    </a>
-                    <a href="https://github.com/rkryanx7209/Nutri-" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://nutri.gt.tc/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <a href="https://github.com/rkryanx7209/Nutri-" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
-            <!-- Projeto 2 - FamilyBrook -->
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-home"></i>
-                </div>
+                <div class="project-icon"><i class="fas fa-home"></i></div>
                 <h3>FamilyBrook</h3>
                 <p>Site institucional responsivo para a família Brook, com layout moderno e organizado.</p>
                 <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://familybrook.gt.tc/?i=2" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Ver Site
-                    </a>
-                    <a href="https://github.com/rkryanx7209/familybrook" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://familybrook.gt.tc/?i=2" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <a href="https://github.com/rkryanx7209/familybrook" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
-            <!-- Projeto 3 - Locadora 1.0 -->
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-car"></i>
-                </div>
+                <div class="project-icon"><i class="fas fa-car"></i></div>
                 <h3>Locadora 1.0</h3>
-                <p>Primeira versão do sistema de locadora de veículos com listagem de carros e interface simples para visualização.</p>
+                <p>Primeira versão do sistema de locadora de veículos com listagem de carros e interface simples.</p>
                 <div class="project-tech">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://locadoura-ryan01.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Ver Site
-                    </a>
-                    <a href="https://github.com/rkryanx7209/locadoura-01" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://locadoura-ryan01.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <a href="https://github.com/rkryanx7209/locadoura-01" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
-            <!-- Projeto 4 - Locadora 2.0 -->
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-car"></i>
-                </div>
+                <div class="project-icon"><i class="fas fa-car"></i></div>
                 <h3>Locadora 2.0</h3>
-                <p>Versão aprimorada do sistema com melhorias na interface, organização do código e deploy em diferentes plataformas.</p>
+                <p>Versão aprimorada com melhorias na interface, organização do código e deploy em diferentes plataformas.</p>
                 <div class="project-tech">
-                    <span>Node.js</span>
-                    <span>Vite</span>
-                    <span>JavaScript</span>
+                    <span>Node.js</span><span>Vite</span><span>JavaScript</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://locadora2-0.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Ver Site
-                    </a>
-                    <a href="https://github.com/rkryanx7209/Locadora2.0" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://locadora2-0.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Vercel</a>
+                    <a href="https://github.com/rkryanx7209/Locadora2.0" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
-            <!-- Projeto 5 - Diogo Barber -->
             <div class="project-card">
-                <div class="project-icon">
-                    <i class="fas fa-scissors"></i>
-                </div>
+                <div class="project-icon"><i class="fas fa-scissors"></i></div>
                 <h3>Diogo Barber</h3>
                 <p>Landing page profissional para barbearia com foco em agendamento e design moderno.</p>
                 <div class="project-tech">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://diogobarber.gt.tc/?i=2" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Ver Site
-                    </a>
-                    <a href="https://github.com/rkryanx7209/DiogoBarber" target="_blank" rel="noopener noreferrer" class="project-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                    <a href="https://diogobarber.gt.tc/?i=2" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <a href="https://github.com/rkryanx7209/DiogoBarber" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
@@ -243,7 +208,7 @@
 
     <footer id="contato">
         <h2><i class="fas fa-envelope"></i> Contato</h2>
-    
+
         <div class="links-contato">
             <a href="mailto:rkryanx7209@gmail.com" class="contato-item">
                 <i class="fas fa-envelope"></i> rkryanx7209@gmail.com
@@ -258,24 +223,30 @@
 
         <p>Vamos conversar? Me mande uma mensagem!</p>
 
-    <form id="contato-form" class="contato-form">
-    <div class="form-group">
-        <input type="text" name="name" placeholder="Seu nome" required>
-    </div>
-    <div class="form-group">
-        <input type="email" name="email" placeholder="Seu e-mail" required>
-    </div>
-    <div class="form-group">
-        <textarea name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
-    </div>
-    <button type="submit" class="btn-principal">
-        <i class="fas fa-paper-plane"></i> Enviar Mensagem
-    </button>
-     <p id="form-status" class="form-status"></p>
-</form>
+        <form id="contato-form" class="contato-form">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Seu e-mail" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-principal">
+                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+            <p id="form-status" class="form-status"></p>
+        </form>
+
         <p class="copyright">© 2026 Ryan - Desenvolvedor</p>
     </footer>
-    <script src="src/index.js"></script>
+
+    <!-- Botão voltar ao topo -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+<script src="src/index.js"></script>
 </body>
 
 </html>
