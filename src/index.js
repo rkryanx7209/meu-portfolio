@@ -81,3 +81,36 @@
         });
 
         console.log('✅ Site carregado! Projetos disponíveis:', document.querySelectorAll('.project-card').length);
+
+        // Formulário de contato
+const contatoForm = document.getElementById('contato-form');
+if (contatoForm) {
+    contatoForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const status = document.getElementById('form-status');
+        const btn = contatoForm.querySelector('button');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+
+        const data = new FormData(contatoForm);
+        const response = await fetch('https://formspree.io/f/xzdolgjg', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            status.style.display = 'block';
+            status.style.color = '#38bdf8';
+            status.textContent = '✅ Mensagem enviada com sucesso!';
+            contatoForm.reset();
+        } else {
+            status.style.display = 'block';
+            status.style.color = '#f87171';
+            status.textContent = '❌ Erro ao enviar. Tente novamente.';
+        }
+
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
+    });
+}
