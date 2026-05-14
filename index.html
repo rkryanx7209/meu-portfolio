@@ -51,23 +51,23 @@
         </div>
     </section>
 
-    <!-- Contador de Stats -->
+    <!-- Contador de Stats - DINÂMICO -->
     <section class="stats-section">
         <div class="stats-grid">
             <div class="stat-item">
-                <span class="stat-number" data-target="5">0</span>
+                <span class="stat-number" id="projetos-count">0</span>
                 <span class="stat-label"><i class="fas fa-folder-open"></i> Projetos</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="8">0</span>
+                <span class="stat-number" id="tecnologias-count">0</span>
                 <span class="stat-label"><i class="fas fa-code"></i> Tecnologias</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="2">0</span>
+                <span class="stat-number" id="estudo-count">0</span>
                 <span class="stat-label"><i class="fas fa-calendar-alt"></i> Anos estudando</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="100">0</span>
+                <span class="stat-number" id="dedicacao-count">0</span>
                 <span class="stat-label"><i class="fas fa-fire"></i> % Dedicação</span>
             </div>
         </div>
@@ -94,42 +94,42 @@
             <div class="skill-card">
                 <i class="fab fa-html5"></i>
                 <h3>HTML5</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 85%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="85%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-css3-alt"></i>
                 <h3>CSS3</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 75%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="75%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-php"></i>
                 <h3>PHP</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 60%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="60%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-git-alt"></i>
                 <h3>Git/GitHub</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 70%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="70%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fas fa-brain"></i>
                 <h3>Lógica</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 80%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="80%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-js"></i>
                 <h3>JavaScript</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 70%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="70%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-node-js"></i>
                 <h3>Node.js</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 55%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="55%"></div></div>
             </div>
             <div class="skill-card">
                 <i class="fab fa-android"></i>
                 <h3>Android</h3>
-                <div class="skill-level"><div class="level-bar" style="width: 50%"></div></div>
+                <div class="skill-level"><div class="level-bar" data-skill-width="50%"></div></div>
             </div>
         </div>
     </section>
@@ -148,6 +148,22 @@
                 <div class="project-links">
                     <a href="https://nutri.gt.tc/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
                     <a href="https://github.com/rkryanx7209/Nutri-" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-apple-whole"></i></div>
+                <h3>Nutri-GT App</h3>
+                <p>Versão mobile do sistema de agendamento e avaliação nutricional Nutri-GT, desenvolvida com Capacitor e Android Studio para dispositivos Android.</p>
+                <div class="project-tech">
+                    <span>Capacitor</span>
+                    <span>Android Studio</span>
+                    <span>Mobile</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://nutri.gt.tc/" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <a href="https://github.com/rkryanx7209/nutri-app" target="_blank" rel="noopener noreferrer" class="project-link"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
 
@@ -246,7 +262,8 @@
     <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
         <i class="fas fa-chevron-up"></i>
     </button>
-<script src="src/index.js"></script>
+
+    <script src="src/index.js"></script>
 </body>
 
 </html>

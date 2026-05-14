@@ -1,26 +1,118 @@
- // Theme Toggle (Dark/Light)
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        
-        function toggleTheme() {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                htmlElement.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                htmlElement.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            }
-        }
-        
-        if (themeToggle) {
-            themeToggle.addEventListener('click', toggleTheme);
-        }
+// ========== STATS DINÂMICOS ==========
 
-        // Typewriter Effect
+// Função para contar projetos automaticamente
+function atualizarContadorProjetos() {
+    const projetos = document.querySelectorAll('.project-card').length;
+    const projetosCount = document.getElementById('projetos-count');
+    if (projetosCount) {
+        animateNumber(projetosCount, projetos);
+    }
+}
+
+// Função para contar tecnologias únicas dos projetos
+function atualizarContadorTecnologias() {
+    const techs = new Set();
+    document.querySelectorAll('.project-tech span').forEach(tech => {
+        techs.add(tech.textContent.trim());
+    });
+    const tecnologiasCount = document.getElementById('tecnologias-count');
+    if (tecnologiasCount) {
+        animateNumber(tecnologiasCount, techs.size);
+    }
+}
+
+// Função para calcular anos de estudo (até Dezembro de 2026)
+function atualizarAnosEstudo() {
+    const dataInicio = new Date(2024, 0, 1);
+    const dataFim = new Date(2026, 11, 31);
+    const hoje = new Date();
+    
+    let anosEstudo;
+    if (hoje >= dataFim) {
+        anosEstudo = 3;
+    } else {
+        const diffMeses = (hoje.getFullYear() - dataInicio.getFullYear()) * 12 + (hoje.getMonth() - dataInicio.getMonth());
+        anosEstudo = Math.max(0, diffMeses / 12);
+    }
+    
+    const estudoCount = document.getElementById('estudo-count');
+    if (estudoCount) {
+        animateNumber(estudoCount, parseFloat(anosEstudo.toFixed(1)));
+    }
+}
+
+// Função para animar a dedicação (vai de 0 até 100)
+function atualizarDedicacao() {
+    const dedicacaoCount = document.getElementById('dedicacao-count');
+    if (dedicacaoCount) {
+        animateNumber(dedicacaoCount, 100);
+    }
+}
+
+// Função de animação de número
+function animateNumber(element, target) {
+    let current = 0;
+    const increment = target / 50;
+    const updateNumber = () => {
+        current += increment;
+        if (current < target) {
+            element.textContent = Math.floor(current);
+            requestAnimationFrame(updateNumber);
+        } else {
+            element.textContent = target;
+        }
+    };
+    updateNumber();
+}
+
+// Executar quando a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+    atualizarContadorProjetos();
+    atualizarContadorTecnologias();
+    atualizarAnosEstudo();
+    atualizarDedicacao(); // Dedicação animada de 0 até 100
+});
+
+// Observar mudanças na DOM (quando adicionar novos projetos)
+const projetosSection = document.getElementById('projetos');
+const observerProjetos = new MutationObserver(() => {
+    atualizarContadorProjetos();
+    atualizarContadorTecnologias();
+});
+
+if (projetosSection) {
+    observerProjetos.observe(projetosSection, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Theme Toggle (Dark/Light)
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+function toggleTheme() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+        htmlElement.setAttribute('data-theme', 'light');
+        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+}
+
+
+
+
+// Typewriter Effect
         const typewriterSpan = document.getElementById('typewriter');
         if (typewriterSpan) {
-            const names = ['Ryan', 'Ryan Carlos', 'Ryan.dev'];
+            const names = ['Ryan.dev', 'Ryan'];
             let nameIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
@@ -119,7 +211,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.querySelectorAll('.level-bar').forEach(bar => {
-                        const width = getComputedStyle(bar).getPropertyValue('--skill-width').trim();
+                        const width = (bar.dataset.skillWidth || getComputedStyle(bar).getPropertyValue('--skill-width')).trim();
                         bar.style.width = '0';
                         setTimeout(() => { bar.style.width = width; }, 100);
                     });
