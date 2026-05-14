@@ -2,7 +2,7 @@
 
 Olá! Eu sou **Ryan**, desenvolvedor web focado em criar aplicações modernas, responsivas e funcionais utilizando tecnologias da web.
 
-Tenho experiência principalmente com **HTML, CSS, JavaScript, PHP e Node.js**, desenvolvendo sistemas e sites completos.
+Tenho experiência principalmente com **HTML, CSS, JavaScript, PHP, Node.js e desenvolvimento mobile**, criando sistemas completos e aplicações práticas.
 
 ---
 
@@ -11,6 +11,7 @@ Tenho experiência principalmente com **HTML, CSS, JavaScript, PHP e Node.js**, 
 | Projeto | Descrição | Acessar |
 |--------|-----------|---------|
 | 🥗 **Nutri-GT** | Sistema de agendamento e avaliação nutricional | https://nutri.gt.tc/ |
+| 📱 **Nutri-GT App** | Aplicativo mobile do sistema Nutri-GT | https://github.com/rkryanx7209/nutri-app |
 | 💈 **FamilyBrook** | Site institucional responsivo com design moderno | https://familybrook.gt.tc/?i=2 |
 | 🚗 **Locadora 1.0** | Sistema básico de locadora de veículos | https://locadoura-ryan01.netlify.app/ |
 | 🚗 **Locadora 2.0** | Sistema avançado de locadora com cadastro e controle de locações | https://locadora2-0.vercel.app/ |
@@ -25,6 +26,7 @@ Tenho experiência principalmente com **HTML, CSS, JavaScript, PHP e Node.js**, 
 - PHP
 - Node.js
 - Vite
+- Android / Capacitor
 - Git & GitHub
 
 ---
