@@ -20,7 +20,7 @@
         // Typewriter Effect
         const typewriterSpan = document.getElementById('typewriter');
         if (typewriterSpan) {
-            const names = ['Ryan', 'Ryan Silva', 'Ryan Santos'];
+            const names = ['Ryan', 'Ryan Carlos', 'Ryan.dev'];
             let nameIndex = 0;
             let charIndex = 0;
             let isDeleting = false;
