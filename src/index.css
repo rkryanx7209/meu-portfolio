@@ -14,6 +14,19 @@ body {
     overflow-x: hidden;
 }
 
+.logo img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+    transition: all 0.3s ease;
+}
+
+.logo:hover img {
+    transform: rotate(10deg) scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.8));
+}
+
 span {
     color: #38bdf8;
 }
@@ -164,10 +177,16 @@ nav ul li a:hover {
 .hero::before {
     content: '';
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-    animation: rotate 20s linear infinite;
+    width: 550px;
+    height: 550px;
+    background-image: url('../img/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.12;
+    z-index: 0;
+    filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4))
+            drop-shadow(0 0 80px rgba(129, 140, 248, 0.2));
 }
 
 .hero::after {
@@ -181,6 +200,10 @@ nav ul li a:hover {
     opacity: 0.3;
     pointer-events: none;
 }
+
+
+
+
 
 @keyframes float {
     from {
